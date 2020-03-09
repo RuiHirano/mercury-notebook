@@ -43,8 +43,8 @@ export const useUpdateCell = () => {
 const convertCellToJson = ((cell: Cell)=>{
     let cellJson: any = {}
     cellJson["id"] = cell.ID
-    cellJson["celltype"] = cell.CellType
-    cellJson["executionCount"] = cell.ExecutionCount
+    cellJson["cell_type"] = cell.CellType
+    cellJson["execution_count"] = cell.ExecutionCount
     cellJson["metadata"] = cell.Metadata
     cellJson["source"] = cell.Source
     cellJson["outputs"] = cell.Outputs
@@ -55,8 +55,8 @@ const convertCellToJson = ((cell: Cell)=>{
 const convertJsonToCell = ((celljson: any)=>{
     let cell: Cell = {
         ID: celljson["id"],
-        CellType: celljson["celltype"],
-        ExecutionCount: celljson["executionCount"],
+        CellType: celljson["cell_type"],
+        ExecutionCount: celljson["execution_count"],
         Metadata: celljson["metadata"],
         Source: celljson["source"],
         Outputs: celljson["outputs"],
