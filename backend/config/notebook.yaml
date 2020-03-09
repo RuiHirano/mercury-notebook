@@ -1,12 +1,18 @@
+notebook:
+id: "dummy"
 cells:
-- cell_type: markdown
-  metadata: {}
-  soure:
-  - '# Title'
-- cell_type: code
-  metadata: {}
-  outputs: []
-  soure:
-  - import ThisIsCode
+  - cell_type: 1
+    metadata: {}
+    outputs: []
+    source:
+      - '# Title'
+  - cell_type: 0
+    metadata: {}
+    outputs: []
+    source:
+      - import ThisIsCode
+metadata:
+  title: "title"
+  created_at: 0
+  updated_at: 0
 
-  
