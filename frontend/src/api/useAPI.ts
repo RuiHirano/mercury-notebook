@@ -9,10 +9,10 @@ import { appActions } from '../redux/modules/app'
 ////////////////////////////////////////////////
 
 
-export const useUploadCell = () => {
+export const useUpdateCell = () => {
   const [status, setStatus] = useState<Status>({Progress: 0, Log: "", Error: "", Loading: false})
   const dispatch = useDispatch()
-  const uploadCell = useCallback(async (cell: Cell) => {
+  const updateCell = useCallback(async (cell: Cell) => {
     
     try{
       // Loading開始
@@ -25,7 +25,7 @@ export const useUploadCell = () => {
       const newCell = convertJsonToCell(res.data())
       dispatch(appActions.updateCell(newCell))
       
-      setStatus({...status, Loading:false})
+      setStatus({...status, Loading:false, Progress: 100})
 
     }catch(err){
         setStatus({...status, Error:err, Loading: false})
@@ -33,7 +33,7 @@ export const useUploadCell = () => {
     }
   }, [status])
 
-  return {"uploadCell": uploadCell, "status": status}
+  return {"updateCell": updateCell, "status": status}
 }
 
 /////////////////////////////////////////////////

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Typography, TextField, Button, Select, MenuItem } from "@material-ui/core";
-import { useUploadCell } from "../api/useAPI";
+import { useUpdateCell } from "../api/useAPI";
 import { Notebook, Cell } from "../types";
 
 const CellType = ["Markdown", "Code", "Terminal"]
@@ -13,12 +13,12 @@ const CellComponent: React.FC<Props> = (props) => {
 
     const [ cell, setCell ] = useState<Cell>(props.cell)
     const [ cellType, setCellType] = useState<string>(CellType[0])
-    const { uploadCell, status } = useUploadCell()
+    const { updateCell, status } = useUpdateCell()
     console.log("cell component")
 
-    const handleUpload = ()=>{
+    const handleUpdate = ()=>{
         console.log("cell: ", cell)
-        uploadCell(cell)
+        updateCell(cell)
     }
 
     useEffect(()=>{
@@ -41,7 +41,7 @@ const CellComponent: React.FC<Props> = (props) => {
                 <MenuItem value={CellType[2]}>{CellType[2]}</MenuItem>
             </Select>
            <TextField style={{width: 700}} onChange={(e)=>{}} label="output file name" variant="outlined"/>
-           <Button variant={"contained"} onClick={()=>handleUpload()}>Upload</Button>
+           <Button variant={"contained"} onClick={()=>handleUpdate()}>Update</Button>
         </div>
     );
 };

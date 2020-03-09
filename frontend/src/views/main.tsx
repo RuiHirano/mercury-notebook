@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Typography, TextField, Button, Select, MenuItem } from "@material-ui/core";
-import { useUploadCell } from "../api/useAPI";
 import { Notebook, Cell, CellType } from "../types";
 import CellComponent from "../components/cell";
 import { useSelector, useDispatch } from "react-redux";
