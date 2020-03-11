@@ -22,7 +22,8 @@ export const useUpdateCell = () => {
 
       const celljson: string = convertCellToJson(cell)
       const res = await api.updateCell(celljson)
-      const newCell = convertJsonToCell(res.data())
+      console.log("res: ", res)
+      const newCell = convertJsonToCell(res.data)
       dispatch(appActions.updateCell(newCell))
       
       setStatus({...status, Loading:false, Progress: 100})

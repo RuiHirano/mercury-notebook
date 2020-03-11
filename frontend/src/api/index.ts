@@ -40,6 +40,7 @@ export default class API{
             {
               url: url,
               method: 'post',
+              baseURL: this.baseURL,
               data: data,
             }
         );
@@ -48,7 +49,7 @@ export default class API{
       // visualization用取得
       async updateCell(data: string) {
         return this.post({
-          url: '/notebook/cell/update',
+          url: '/notebook/update',
           data: data
         });
       }

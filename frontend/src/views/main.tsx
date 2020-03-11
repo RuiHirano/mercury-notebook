@@ -25,11 +25,6 @@ const Main: React.FC = () => {
     const [ cell, setCell ] = useState<string>("")
     const dispatch = useDispatch()
 
-    const handleUpload = ()=>{
-        console.log("cell: ", cell)
-        //uploadCell(cell)
-        
-    }
 
     const handleAddCell = ()=>{
         console.log("cell: ", cell)
